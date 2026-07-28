@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom Dhakulkar - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .hero .role {
+            font-size: 1.5rem;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .hero .location {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        section:first-of-type {
+            border-top: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .project-card .project-type {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-card li {
+            padding: 8px 0;
+            color: #555;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+
+        /* Resume Download Section */
+        .resume-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .resume-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-button:hover {
+            background-color: #333;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .contact-item a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .role {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hariom Dhakulkar</h1>
+            <p class="role">Cloud and NOC Engineer</p>
+            <p class="location">Pune, Maharashtra, India</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Cloud and NOC Engineer with expertise in AWS, networking technologies, and automation. Demonstrated success improving network reliability by 15%, slashing downtime by 20%, and accelerating operational efficiency by 30% through Python automation. Proficient in architecting scalable cloud solutions, enforcing security best practices, and optimizing infrastructure for high availability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud Technologies</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, IAM, RDS, VPC, Lambda, CloudFormation, CloudWatch, CloudTrail)</li>
+                        <li>OCI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Networking</h3>
+                    <ul>
+                        <li>CCNA, TCP/IP, VLAN, DHCP</li>
+                        <li>Switching, Routing, L2/L3 Troubleshooting</li>
+                        <li>GPON, EPON, OLT/ONU</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Automation & DevOps</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Terraform, Docker, Kubernetes</li>
+                        <li>Jenkins, GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Monitoring & Tools</h3>
+                    <ul>
+                        <li>Zabbix, CloudWatch</li>
+                        <li>MikroTik, Cisco, Huawei</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Core Java</li>
+                        <li>HTML</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <ul>
+                        <li>Linux Administration</li>
+                        <li>Windows Server</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>AWS IAM Security Enhancement</h3>
+                    <p class="project-type">Cloud Security Project</p>
+                    <p class="project-date">January 2025</p>
+                    <ul>
+                        <li>Designed comprehensive IAM policies and enforced MFA, mitigating unauthorized access attempts by 40%</li>
+                        <li>Activated CloudTrail auditing across all AWS accounts, amplifying compliance visibility by 35%</li>
+                        <li>Streamlined least-privilege access controls and automated security monitoring for robust cloud security posture</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>Machine Learning: Early Detection of Obesity</h3>
+                    <p class="project-type">Healthcare Analytics Project</p>
+                    <p class="project-date">January 2022 - December 2024</p>
+                    <ul>
+                        <li>Analyzed 100+ medical datasets using machine learning algorithms, enhancing model accuracy by 20%</li>
+                        <li>Identified key predictors for early obesity detection, supporting improved diagnostic workflows</li>
+                        <li>Executed data preprocessing, feature engineering, and model optimization techniques for accurate predictions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Download Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <a href="#" class="resume-button" onclick="alert('Please upload your resume PDF and update the href attribute'); return false;">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong> <a href="mailto:dhakulkarhariom@gmail.com">dhakulkarhariom@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> <a href="tel:+918857092677">+91-8857092677</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hariom-dhakulkar" target="_blank">linkedin.com/in/hariom-dhakulkar</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Location:</strong> Pune, Maharashtra, India
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
